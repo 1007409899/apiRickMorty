@@ -1,0 +1,63 @@
+.favorito-card {
+    width: 400px;
+    margin: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.header-icon {
+    font-size: 40px;
+    margin-right: 10px;
+    color: rgb(35, 148, 240);
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header-subtitle {
+    margin: 0;
+    font-size: 16px;
+}
+
+.personaje-img {
+    width: 40%;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.info-container {
+    margin-top: 20px;
+}
+
+.info-title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.info-text {
+    margin: 0;
+    font-size: 16px;
+}
+
+.mat-red {
+    color: red;
+}
+
+.mat-red:hover {
+    color: rgb(205, 97, 97);
+    font-size: 30px;
+}

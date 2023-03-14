@@ -1,0 +1,40 @@
+<div class="container ">
+
+    <div class="row">
+        <div class="col-1 col-sm-2 col-md-2 col-lg-2" *ngFor="let favorito of favoritos" class="favorito-card">
+            <div>
+
+                <div class="row justify-content-around d-flex">
+                    <div class="col">
+                        <mat-icon class="header-icon" color="warnd">favorite</mat-icon>
+                    </div>
+                    <div class="col ">
+                        <div class="header-text">
+                            <h2 class="header-title">Favorito</h2>
+
+                        </div>
+
+                    </div>
+                    <div class="col mr-4 pr-4 ">
+                        <button mat-icon-button>
+                                <mat-icon   class="mat-red">delete</mat-icon>
+                            </button>
+                    </div>
+                </div>
+
+            </div>
+            <mat-card-content class="p-2">
+                <img class="personaje-img rounded-2" [src]="favorito.imagen" alt="Imagen del personaje">
+
+                <div class="info-container p-2">
+                    <h3 class="info-title">Personaje:</h3>
+                    <p class="info-text">{{ favorito.name }}</p>
+                    <h3 class="info-title">Observaciones:</h3>
+                    <p class="info-text">{{ favorito.observaciones }}</p>
+                    <h3 class="info-title">Usuario:</h3>
+                    <p class="info-text">{{ favorito.usuario }}</p>
+                </div>
+            </mat-card-content>
+        </div>
+    </div>
+</div>

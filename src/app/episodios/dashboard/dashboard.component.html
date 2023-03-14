@@ -1,0 +1,52 @@
+<mat-toolbar class="mat-elevation-z8">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>account_circle</mat-icon>
+
+  </button>
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+    <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+    <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+
+    </button> {{user_Name.Email}}
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+        <img class="avatar mat-elevation-z8" src="assets/images/riky.jpg" />
+
+        <h4 class="name">{{user_Name.Nombre}}</h4>
+        <p class="designation">Bienvenido!</p>
+
+        <mat-divider></mat-divider>
+
+        <button mat-button class="menu-button" routerLink="/dashboard">
+      <mat-icon>home</mat-icon>
+      <span>Episodios</span>
+    </button>
+        <button mat-button class="menu-button " routerLink="/dashboard/favoritos">
+          <mat-icon>favorite</mat-icon>
+      <span>Favoritos</span>
+      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+
+{{this.episodiosService.cantidadFavoritos}}
+        <span class="visually-hidden">unread messages</span>
+      </span>
+    </button>
+        <button mat-button class="menu-button" routerLink="/about">
+      <mat-icon>info</mat-icon>
+      <span>About</span>
+    </button>
+
+        <mat-divider></mat-divider>
+
+        <button mat-button class="menu-button botton-al-final" (click)="logout()">
+      <mat-icon>logout</mat-icon>
+      <span>Salir</span>
+    </button>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="content mat-elevation-z8">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

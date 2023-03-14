@@ -1,0 +1,42 @@
+.card {
+    cursor: pointer;
+    padding: 0px;
+    width: 400px;
+    margin: 10px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+mat-card {
+    margin-left: 50px;
+}
+
+.favorite {
+    margin-left: 28px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.24);
+    transform: translateY(-4px);
+}
+
+.mat-icon-button {
+    background-color: transparent;
+    color: #888;
+}
+
+.mat-icon-button:hover {
+    color: #e91e63;
+}
+
+.fixed-input-group {
+    position: fixed;
+    z-index: 4;
+    margin-top: -20px;
+}
+
+.episodes-grid {
+    font-size: 400px 500px;
+    margin-top: 30px;
+    position: static;
+}

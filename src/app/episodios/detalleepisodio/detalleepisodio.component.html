@@ -1,0 +1,46 @@
+<button mat-icon-button routerLink="/dashboard" class="position">
+  <mat-icon aria-label="Volver">arrow_back</mat-icon>
+</button>
+
+<div *ngIf="episode">
+    <h1>{{ episode.name }}</h1>
+    <p>{{ episode.air_date }}</p>
+    <p>{{ episode.episode }}</p>
+    <h2>Personajes:</h2>
+    <div>
+        <mat-grid-list cols="4" gutterSize="16px">
+            <ul>
+                <mat-grid-tile *ngFor="let character of characters">
+                    <div>
+                        <div class="row">
+                            <img [src]="character.image" alt="{{ character.name }}">
+                        </div>
+                        <div class="row mb-2 ustify-content-center">
+                            <div class="col-5">
+                                <p>{{ character.name }}</p>
+                            </div>
+                            <div class="col-3">
+                                <p>{{ character.species }}</p>
+                            </div>
+                            <div class="col-3">
+
+                                <button [ngClass]="{'badge rounded-pill bg-success rounded-2 mt-1 ': character.status === 'Alive', 'badge rounded-pill bg-danger': character.status === 'Dead'}">
+                               {{character.status}}
+                              </button>
+
+                            </div>
+
+                            <div class="col-2">
+                                <button (click)="MarkFavoritOpenDialog(character)" class="buttonFavorite" data-bs-toggle="tooltip" data-bs-placement="top" title="Favorito" mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
+                                <mat-icon>favorite</mat-icon>
+                              </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </mat-grid-tile>
+            </ul>
+        </mat-grid-list>
+    </div>
+
+</div>

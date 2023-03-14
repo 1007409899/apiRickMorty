@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row">
+        <div class="col fixed-input-group input-group mb-5">
+            <span class="input-group-text" id="basic-addon1"> <mat-icon>search</mat-icon></span>
+            <input (keyup)="buscarEpisodios($event)" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+    </div>
+
+</div>
+<div class="episodes-grid ">
+    <div class="row">
+        <mat-card class="card col-1 col-sm-3 col-md-3 col-lg-3 " *ngFor="let episode of episodes?.results" (click)="detailsEpisodio(episode)">
+            <div class=" ml-3 pl-4 justify-content-between">
+
+
+                <mat-card-header class="mt-2">
+                    <mat-card-title>{{ episode.name }}</mat-card-title>
+                    <mat-card-subtitle>{{ episode.episode }}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content class="favorite">
+                    <p>Fecha: {{ episode.air_date }}</p>
+                    <p>Personajes:</p>
+
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-icon-button (click)="markAsFavorite(episode)">
+        <mat-icon class="favorite" color="primary">movie_creation</mat-icon>
+      </button>
+                </mat-card-actions>
+            </div>
+        </mat-card>
+    </div>
+</div>
+<mat-paginator [length]="episodes?.info?.count" [pageSize]="pageSize" [pageSizeOptions]="[20, 40, 50]"></mat-paginator>
