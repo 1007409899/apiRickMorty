@@ -11,6 +11,9 @@ import { EpisodiosService } from '../services/episodios.service';
 })
 export class FavoritosComponent implements OnInit {
   public favoritos: Favoritos[] = []
+  public mensajeFavoritos ="No se encontraron favoritos para el usuario!"
+  public mostrarFavoritos= false;
+
   constructor(private episodiosService: EpisodiosService) { }
 
   ngOnInit(): void {
@@ -22,6 +25,10 @@ export class FavoritosComponent implements OnInit {
     this.episodiosService.getFavoritos().subscribe(
       (resp: any) => {
         this.favoritos = resp
+
+        if(this.favoritos.length <= 0){
+          this.mostrarFavoritos= true
+        }
         console.log(this.favoritos);
 
 

@@ -1,5 +1,5 @@
 <div class="container ">
-
+    <div *ngIf="mostrarFavoritos" class="alert alert-warning arounded-lg" role="alert">{{mensajeFavoritos}}</div>
     <div class="row">
         <div class="col-1 col-sm-2 col-md-2 col-lg-2" *ngFor="let favorito of favoritos" class="favorito-card">
             <div>
